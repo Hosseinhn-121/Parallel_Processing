@@ -14,5 +14,6 @@ Matrix multiplication has been performed sequentially. The multiplication operat
 
 # Part 2
 After performing the multiplication sequentially, in this stage, the operations are parallelized using OMP. Here, using the 'collapse' directive, nested loops are parallelized. For parallelization in accordance with the question's requirements, two outer loops are parallelized, and consequently, C[i][j] becomes the smallest executable unit. This operation is executed as shown below. As evident in the diagram, the multiplication of a row by a column calculates a C[i][j], and the continuation of the operation also proceeds in parallel as illustrated.
+
 ![part two](figures/second part.png)
 
