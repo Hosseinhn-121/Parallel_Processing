@@ -7,5 +7,12 @@ In the fourth and fifth sections, the method of performing the multiplication op
 
 Each of these sections has been executed in two modes. The first mode is such that matrix B is stored in a row-wise manner, and then the multiplication operation is performed. The second mode is such that matrix B is stored in a column-wise manner, and the multiplication operation is carried out. For column-wise storage, matrix B has been stored in a one-dimensional array named "Bcolumn," and for the multiplication in this case, the array B is used. 
 
-Note that each of these sections could be performed on larger matrices. 
+Note that each of these sections could be performed on larg matrices. 
+
+# Part 1
+Matrix multiplication has been performed sequentially. The multiplication operation time, when matrix B is stored in a column-wise manner, is significantly lower compared to the time taken when it's stored in a row-wise manner.
+
+# Part 2
+After performing the multiplication sequentially, in this stage, the operations are parallelized using OMP. Here, using the 'collapse' directive, nested loops are parallelized. For parallelization in accordance with the question's requirements, two outer loops are parallelized, and consequently, C[i][j] becomes the smallest executable unit. This operation is executed as shown below. As evident in the diagram, the multiplication of a row by a column calculates a C[i][j], and the continuation of the operation also proceeds in parallel as illustrated.
+![part two](figures/second part.png)
 
